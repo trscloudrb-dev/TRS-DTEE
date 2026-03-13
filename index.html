@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Railway Rolling Stock Running Staff Department(Traction Rolling Stock (TRS) Directorate)</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+color:white;
+text-align:center;
+}
+
+header{
+padding:40px;
+background:#001f3f;
+}
+
+nav{
+background:#003366;
+padding:15px;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin:0 15px;
+font-weight:bold;
+}
+
+nav a:hover{
+color:#00f2fe;
+}
+
+button{
+padding:10px 20px;
+font-size:16px;
+cursor:pointer;
+border:none;
+border-radius:5px;
+}
+
+.login-btn{
+background:#00c6fb;
+color:black;
+}
+
+.section{
+padding:40px;
+}
+
+/* Login Popup */
+
+#loginBox{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.7);
+justify-content:center;
+align-items:center;
+}
+
+.login-content{
+background:white;
+color:black;
+padding:30px;
+border-radius:10px;
+width:300px;
+}
+
+.login-content input{
+width:100%;
+padding:10px;
+margin:10px 0;
+}
+
+/* Moving Heading */
+
+.moving-heading{
+font-size:24px;
+font-weight:bold;
+margin:30px;
+}
+
+.moving-heading a{
+color:#00f2fe;
+text-decoration:none;
+}
+
+.moving-heading a:hover{
+color:yellow;
+}
+
+/* Visitor Counter */
+
+.visitor-counter{
+position:fixed;
+bottom:10px;
+right:10px;
+background:rgba(0,0,0,0.7);
+padding:10px 15px;
+border-radius:8px;
+text-align:center;
+font-size:14px;
+box-shadow:0 0 10px rgba(0,0,0,0.5);
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Railway Rolling Stock Running Staff Department</h1>
+<h2>(Traction Rolling Stock (TRS) Directorate)</h2>
+</header>
+
+<nav>
+<a href="#">Home</a>
+<a href="#">About</a>
+<a href="#">Staff</a>
+<a href="#">Contact</a>
+<button class="login-btn" onclick="openLogin()">Login</button>
+</nav>
+
+<div class="section">
+<h2>Welcome to Running Staff Portal</h2>
+<p>Click Login to access Important Letters.</p>
+</div>
+
+<!-- Login Popup -->
+
+<div id="loginBox">
+<div class="login-content">
+
+<h3>Admin Login</h3>
+
+<input type="text" id="user" placeholder="Enter ID">
+<input type="password" id="pass" placeholder="Enter Password">
+
+<button onclick="login()">Login</button>
+<button onclick="closeLogin()">Close</button>
+
+<p id="error" style="color:red;"></p>
+
+</div>
+</div>
+
+<!-- Moving Heading -->
+
+<div class="moving-heading">
+
+<marquee behavior="scroll" direction="left" scrollamount="4">
+
+<a href="https://docs.google.com/spreadsheets/d/1ODIr1Miic5ZsEQJLK2_3OT1PGQybzDuDk4mHsLOmGqw/edit?gid=0#gid=0" target="_blank">
+
+🚆 Major Signal | Running Room Abnormality (Click Here)
+
+</a>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<a href="https://drive.google.com/drive/folders/19PFkHY-3ySkafZndcVSW5fg06W-_ecR8" target="_blank">
+
+🚆 SPAD 2025-2026 CASES Details (Click Here)
+
+</a>
+
+</marquee>
+
+</div>
+
+<!-- Visitor Counter -->
+
+<div class="visitor-counter">
+
+<div>Total Visitors</div>
+
+<img id="counterImg"
+src="https://hitwebcounter.com/counter/counter.php?page=98765432&style=0006&nbdigits=5&type=page&initCount=0"
+title="Visitor Counter"
+alt="visitor counter"/>
+
+</div>
+
+<script>
+
+function openLogin(){
+document.getElementById("loginBox").style.display="flex";
+}
+
+function closeLogin(){
+document.getElementById("loginBox").style.display="none";
+}
+
+function login(){
+
+var u=document.getElementById("user").value;
+var p=document.getElementById("pass").value;
+
+if(u==="admin" && p==="1234"){
+window.location.href="letter.html";
+}else{
+document.getElementById("error").innerHTML="Invalid ID or Password";
+}
+
+}
+
+/* Counter Cache Fix */
+
+var counter=document.getElementById("counterImg");
+counter.src=counter.src+"&rand="+Math.random();
+
+</script>
+
+</body>
+</html>
